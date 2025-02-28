@@ -1,29 +1,53 @@
-# Create T3 App
+# Clerk Nextjs Secure WebSocket Example
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+This project demonstrates how to implement secure WebSocket connections using Clerk authentication with Nextjs.
+It includes both a client and server implementation showing how to maintain authenticated WebSocket connections.
 
-## What's next? How do I make an app with this?
+## Prerequisites
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- Node.js (v16 or higher recommended)
+- A Clerk account and project (get one at [clerk.com](https://clerk.com))
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Setup
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+1. Clone the repository:
 
-## Learn More
+```bash
+git clone https://github.com/nicovogel/clerk-nextjs-websocket-example.git
+cd clerk-nextjs-websocket-example
+```
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+2. Install dependencies:
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+```bash
+npm install
+```
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+3. Create a `.env` file in the root directory and add your API keys:
 
-## How do I deploy this?
+```bash
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+```
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## Running the project
+
+1. Start the server:
+
+```bash
+npm run dev
+```
+
+2. Open your browser and navigate to `http://localhost:3000` to access the chat interface.
+
+## Project Structure
+
+- `/src/app`
+  - `page.ts` - Main page with the websocket connection
+- `/src/server`
+  - `server.ts` - Custom nextjs server
+  - `ws/web-socket-server.ts` - Websocket implementation
+
+## License
+
+MIT
